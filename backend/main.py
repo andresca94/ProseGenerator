@@ -318,7 +318,7 @@ def generate_prose_with_metadata(
     setting: str = "",
     genre: str = "",
     style: str = "",
-    approx_word_count: int = 1500,
+    approx_word_count: int = 1000,
     top_k: int = 5,
     re_rank: bool = True,
     few_shot_query: str = "example sci-fi chapter excerpt",
@@ -416,6 +416,7 @@ class ProseRequest(BaseModel):
     setting: str = ""
     genre: str = ""
     style: str = ""
+    approx_word_count: Optional[int] = 1000
 
 @app.post("/generate-prose")
 async def beat_to_prose_endpoint(req: ProseRequest):
@@ -431,7 +432,7 @@ async def beat_to_prose_endpoint(req: ProseRequest):
         setting=req.setting,
         genre=req.genre,
         style=req.style,
-        approx_word_count=1500
+        approx_word_count=req.approx_word_count
     )
     return {"prose_output": output_text}
 
