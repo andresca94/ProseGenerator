@@ -17,15 +17,22 @@ import random
 from datetime import datetime
 from typing import List, Dict, Optional
 from copy import copy
+from fastapi.middleware.cors import CORSMiddleware
+
 
 import openai
-import pinecone
+from pinecone import Pinecone, ServerlessSpec
+#import pinecone
 import numpy as np
 from torch import nn
 from sentence_transformers import CrossEncoder
 
 from fastapi import FastAPI
 from pydantic import BaseModel
+
+from dotenv import load_dotenv
+load_dotenv()  # This will load variables from the .env file into os.environ
+
 
 # -------------------------------------------------------------------
 # Debug/Logging Configuration
@@ -50,8 +57,8 @@ NAMESPACE = "default"
 # -------------------------------------------------------------------
 # Pinecone Client Initialization
 # -------------------------------------------------------------------
-pinecone.init(api_key=pinecone_key, environment="us-east1-gcp")
-index = pinecone.Index(INDEX_NAME)
+pc = Pinecone(api_key=pinecone_key, environment="us-east1-gcp")
+index = pc.Index(INDEX_NAME)
 logger.info("Pinecone client initialized and connected to index: %s", INDEX_NAME)
 
 # -------------------------------------------------------------------
@@ -393,6 +400,15 @@ Use the references as inspiration for tone, but do not copy them verbatim.
 # FastAPI Setup & Endpoint
 # -------------------------------------------------------------------
 app = FastAPI(title="Beats-to-Prose Generator")
+
+# Add CORS middleware configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class ProseRequest(BaseModel):
     beats: List[str]
