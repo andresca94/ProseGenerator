@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+openai==0.28
+pinecone-client
+sentence-transformers
+torch
+numpy
+pydantic
