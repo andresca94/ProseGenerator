@@ -4,6 +4,9 @@ prosegenerator_env/
 # Ignore the .history directory
 .history/
 
+# Ignore environment files containing secrets
+backend/.env
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
