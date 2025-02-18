@@ -8,6 +8,7 @@ ProseGenerator is a project that transforms a series of story beats and optional
 - **Frontend:** (To be developed) A blank folder where a future frontend application (e.g., React) can be placed.
 
 ## Project Structure
+```bash
 ProseGenerator/
 ├── README.md
 ├── backend/
@@ -18,6 +19,7 @@ ProseGenerator/
 │   ├── requirements.txt # Python dependencies
 │   └── (Conda environment: prosegenerator_env)
 └── frontend/
+```
 ## Setup Instructions
 
 ### 1. Clone or Download the Project
