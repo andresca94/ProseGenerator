@@ -7,7 +7,7 @@
 ProseGenerator is a project that transforms a series of story beats and optional metadata (such as characters, setting, genre, and style) into approximately 1500 words of cohesive narrative prose using FastAPI, OpenAI GPT models, and Pinecone for semantic search. The project is organized into two parts:
 
 - **Backend:** Contains the FastAPI application and all the code for generating prose.
-- **Frontend:** (To be developed) A blank folder where a future frontend application (e.g., React) can be placed.
+- **Frontend:** Frontend application (React)
 
 ## Project Structure
 ```bash
