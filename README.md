@@ -1,6 +1,8 @@
 # ProseGenerator
 
-# ProseGenerator
+![Descripción de la imagen](1.png)
+![Descripción de la imagen](2.png)
+![Descripción de la imagen](3.png)
 
 ProseGenerator is a project that transforms a series of story beats and optional metadata (such as characters, setting, genre, and style) into approximately 1500 words of cohesive narrative prose using FastAPI, OpenAI GPT models, and Pinecone for semantic search. The project is organized into two parts:
 
