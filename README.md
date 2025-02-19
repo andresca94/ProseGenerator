@@ -66,12 +66,12 @@ Your backend server will start at http://127.0.0.1:8000.
 ```
 
 ### 6. Frontend Setup
-The frontend folder is currently blank. You can initialize your frontend application (for example, using Create React App) by navigating to the frontend folder and running:
+You can initialize your frontend application  by navigating to the frontend folder and running:
 
 ```bash
 
 cd ../frontend
-npx create-react-app .
+npm run serve .
 ```
 ### 7. Usage
 **Backend Endpoint**:
